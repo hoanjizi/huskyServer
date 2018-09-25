@@ -8,7 +8,7 @@ const wrapper = (req, res, func) => {
             return Promise.resolve(func(req))
         })
         .then((responseBody) => {
-            res.status(successCode).send(new ExpressResponse(responseBody));
+            res.status(successCode).send(responseBody);
         })
         .catch((error) => {
             doCatch(error, res)
